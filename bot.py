@@ -9,7 +9,7 @@ bot = telebot.TeleBot('6159127815:AAEFpbioj4u_YJROvddzFGIsB8EIUOlonu4')
 # handler command /start
 @bot.message_handler(commands = ["start"])
 def start(m, res = False):
-	bot.send_message(m.chat.id, 'Привет, напиши мне что-нибудь :)')
+	bot.send_message(m.chat.id, 'Send Any Text')
 
 # user message handler
 @bot.message_handler(content_types = ["text"])
