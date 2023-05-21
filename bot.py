@@ -1,20 +1,25 @@
 import telebot
 
-# create bot
+# Create bot
+bot_token=BOT_TOKEN
+bot = telebot.TeleBot('bot_token')
 
+# Handler for /start command
 
+@bot.message_handler(commands=["start"])
 
-bot = telebot.TeleBot('6159127815:AAEFpbioj4u_YJROvddzFGIsB8EIUOlonu4')
+def start(m):
 
-# handler command /start
-@bot.message_handler(commands = ["start"])
-def start(m, res = False):
-	bot.send_message(m.chat.id, 'Send Any Text')
+    bot.send_message(m.chat.id, 'Send Any Text')
 
-# user message handler
-@bot.message_handler(content_types = ["text"])
-def handler_text(message):
-	bot.send_message(message.chat.id, message.text)
+# User message handler
 
-# start bot
-bot.polling(non_stop = True, interval = 0)
+@bot.message_handler(content_types=["text"])
+
+def handle_text(message):
+
+    bot.send_message(message.chat.id, message.text)
+
+# Start bot
+
+bot.polling(non_stop=True, interval=0)
