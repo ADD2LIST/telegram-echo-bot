@@ -1,12 +1,12 @@
 import telebot
 import re
 
-import os
 
-from os import environ
+
+
 # Create bot
-bot_token = os.environ.get("BOT_TOKEN")
-bot = telebot.TeleBot('bot_token')
+
+bot = telebot.TeleBot('a6873ad54d02e43ddb74bc9f0246488f45535485')
 
 # Handler for /start command
 
